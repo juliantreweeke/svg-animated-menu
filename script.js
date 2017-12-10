@@ -175,5 +175,5 @@ glitch = () => {
 
 
 button.addEventListener('click',() => {
-  window.addEventListener('mousemove', setInterval(glitch, 1000));
+  window.addEventListener('mousemove', setInterval(glitch, 70));
 });
