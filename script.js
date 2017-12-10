@@ -3,6 +3,7 @@ let curve = 0, direction;
 let dragged = false;
 
 let menu = document.getElementsByClassName("menu");
+let button = document.getElementById("glitch");
 
 // easing animation function taken from http://kodhus.com/easings/
 function easeOutElastic(t, b, c, d) {
@@ -80,7 +81,7 @@ let setPath = (x,curve) => {
    listener = (e) => {
 
     dragged = true;
-    
+
     // hide info text
     info.style.display = "none";
 
@@ -122,5 +123,57 @@ let setPath = (x,curve) => {
 
 };
 
-
 menu[0].addEventListener('mousedown',drag);
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// experimental stuff////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+function random(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+let glitchPath = (a,b,c,d) => {
+
+  let path = `M0,0,L${a},0,a${b},255 0,0,0,0,${d} L0,${c}`;
+  return path;
+
+}
+
+
+
+glitch = () => {
+
+
+
+  let a = random(50,300);
+  let b = random(200,500);
+  let c = random(200,500);
+  let d = random(200,800);
+  let color = random(200,5000);
+
+  menu[0].style.stroke = `#${color}`;
+  menu[0].style.strokeWidth = `${color}`;
+
+  menu[0].setAttribute('d', glitchPath(a,b,c,d));
+
+}
+
+
+
+
+button.addEventListener('click',() => {
+  window.addEventListener('mousemove', setInterval(glitch, 1000));
+});
