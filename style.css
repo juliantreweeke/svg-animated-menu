@@ -5,7 +5,7 @@ body {
 
 
 .mobile {
-  
+
   width: 300px;
   height:450px;
   border: 1px solid #999;
@@ -13,6 +13,14 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+#info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
 }
 
 svg .menu {
