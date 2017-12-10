@@ -1,0 +1,24 @@
+body {
+  background-color: white;
+}
+
+
+
+.mobile {
+  
+  width: 300px;
+  height:450px;
+  border: 1px solid #999;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg .menu {
+  stroke: #000;
+  stroke-width: 5;
+}
+
+/*SVG reference */
+/*https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths*/
